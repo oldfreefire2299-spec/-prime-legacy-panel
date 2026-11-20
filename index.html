@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PRIME LEGACY</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#321010,#09090d 58%);color:#fff;font-family:Arial,sans-serif;min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:22px 18px 36px}.logo{width:84px;height:84px;border:3px solid #f33;border-radius:50%;display:grid;place-items:center;margin:22px auto 12px;color:#ff3434;font-weight:900;font-size:22px;box-shadow:0 0 25px #f223}.brand{text-align:center;font-weight:900;letter-spacing:2px;color:#ff4747}.sub{text-align:center;color:#aaa;font-size:11px;letter-spacing:3px;margin:7px 0 26px}
+.card{background:#15151c;border:1px solid #492323;border-radius:17px;padding:20px;box-shadow:0 10px 35px #0008}.hidden{display:none}.pinTitle{text-align:center;font-size:19px;font-weight:bold;margin-bottom:15px}.pin{width:100%;background:#09090d;border:1px solid #713030;border-radius:12px;padding:15px;color:white;font-size:23px;text-align:center;letter-spacing:10px;outline:none}.btn{width:100%;padding:14px;border:0;border-radius:12px;background:linear-gradient(90deg,#a81414,#f04444);color:white;font-weight:900;margin-top:14px;font-size:15px}.err{text-align:center;color:#ff7777;font-size:12px;min-height:17px;margin-top:10px}
+h2{font-size:18px;margin:0 0 6px}.muted{color:#999;font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.tile{padding:17px 10px;background:#202027;border:1px solid #4c2929;border-radius:13px;text-align:center;font-weight:bold;color:#ff6666}.tile small{display:block;color:#aaa;font-weight:normal;margin-top:6px;font-size:10px}
+label{display:block;color:#ddd;font-size:12px;margin:17px 0 8px}input[type=range]{width:100%;accent-color:#f44}.status{padding:11px;border-radius:10px;background:#211414;color:#ff8888;text-align:center;font-size:12px;margin-top:14px}
+.note{text-align:center;color:#777;font-size:10px;margin-top:18px}
+</style></head><body><div class="wrap">
+<div id="splash"><div class="logo">PL</div><div class="brand">PRIME LEGACY</div><div class="sub">FAST AWM PANEL</div></div>
+<div id="login" class="card"><div class="pinTitle">ENTER ACCESS PIN</div><input id="pin" class="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••"><button class="btn" onclick="unlock()">UNLOCK PANEL</button><div id="err" class="err"></div></div>
+<div id="panel" class="card hidden"><h2>PRIME LEGACY PANEL</h2><div class="muted">Local demo interface • no game connection</div>
+<div class="grid"><div class="tile">FAST AWM<small>Demo option</small></div><div class="tile">MACRO HEADSHOT<small>Demo option</small></div><div class="tile">AIMLOCK<small>Visual demo only</small></div><div class="tile">HEADSHOT PANEL<small>Demo option</small></div></div>
+<label> SENSITIVITY: <b id="sv">85</b></label><input type="range" min="0" max="100" value="85" oninput="sv.textContent=this.value">
+<label> DPI: <b id="dv">480</b></label><input type="range" min="100" max="800" value="480" oninput="dv.textContent=this.value">
+<button class="btn" onclick="document.getElementById('status').textContent='Demo activated locally — no game changes made.'">ACTIVATE DEMO</button><div id="status" class="status">PANEL READY • DEMO MODE</div></div>
+<div class="note">For entertainment/demo only. Does not modify or interact with Free Fire.</div>
+</div><script>
+function unlock(){if(document.getElementById('pin').value==='9090'){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden')}else{document.getElementById('err').textContent='Incorrect PIN';document.getElementById('pin').value=''}}
+document.getElementById('pin').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+</script></body></html>
